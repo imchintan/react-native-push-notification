@@ -89,7 +89,7 @@ public class RNPushNotificationListenerService extends GcmListenerService {
 
         // If notification ID is not provided by the user for push notification, generate one at random
         if (bundle.getString("id") == null) {
-            SecureRandom randomNumberGenerator = new SecureRandom(System.currentTimeMillis());
+            SecureRandom randomNumberGenerator = new SecureRandom(String.valueOf(System.currentTimeMillis()).getBytes());
             bundle.putString("id", String.valueOf(randomNumberGenerator.nextInt()));
         }
 

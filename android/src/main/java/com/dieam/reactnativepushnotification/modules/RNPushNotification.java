@@ -29,7 +29,7 @@ public class RNPushNotification extends ReactContextBaseJavaModule implements Ac
     public static final String LOG_TAG = "RNPushNotification";// all logging should use this tag
 
     private RNPushNotificationHelper mRNPushNotificationHelper;
-    private final SecureRandom mRandomNumberGenerator = new SecureRandom(System.currentTimeMillis());
+    private final SecureRandom mRandomNumberGenerator = new SecureRandom(String.valueOf(System.currentTimeMillis()).getBytes());
     private RNPushNotificationJsDelivery mJsDelivery;
 
     public RNPushNotification(ReactApplicationContext reactContext) {
