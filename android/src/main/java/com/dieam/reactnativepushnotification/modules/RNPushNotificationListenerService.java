@@ -18,7 +18,7 @@ import com.google.android.gms.gcm.GcmListenerService;
 import org.json.JSONObject;
 
 import java.util.List;
-import java.util.Random;
+import java.security.SecureRandom;
 
 import static com.dieam.reactnativepushnotification.modules.RNPushNotification.LOG_TAG;
 
@@ -89,7 +89,7 @@ public class RNPushNotificationListenerService extends GcmListenerService {
 
         // If notification ID is not provided by the user for push notification, generate one at random
         if (bundle.getString("id") == null) {
-            Random randomNumberGenerator = new Random(System.currentTimeMillis());
+            SecureRandom randomNumberGenerator = new SecureRandom(System.currentTimeMillis());
             bundle.putString("id", String.valueOf(randomNumberGenerator.nextInt()));
         }
 
